@@ -214,7 +214,8 @@ AnimatedGIF.prototype = {
       // the files are WAY smaller o_o. Patches/explanations welcome!
       let buffer = []; // new Uint8Array(width * height * frames.length * 5);
       let gifOptions = {
-          loop: this.repeat
+          loop: this.repeat,
+          disposal: 2
       };
       const options = this.options;
       const {

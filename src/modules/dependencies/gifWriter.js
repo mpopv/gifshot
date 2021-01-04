@@ -153,7 +153,7 @@ export default function gifWriter (buf, width, height, gopts) {
       //  4-7 -    To be defined.
       // NOTE(deanm): Dispose background doesn't really work, apparently most
       // browsers ignore the background palette index and clear to transparency.
-      var disposal = opts.disposal === undefined ? 0 : opts.disposal;
+      var disposal = opts.disposal === undefined ? 2 : opts.disposal;
       if (disposal < 0 || disposal > 3) // 4-7 is reserved.
         throw "Disposal out of range.";
 

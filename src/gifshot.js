@@ -1318,7 +1318,7 @@ function gifWriter(buf, width, height, gopts) {
     //  4-7 -    To be defined.
     // NOTE(deanm): Dispose background doesn't really work, apparently most
     // browsers ignore the background palette index and clear to transparency.
-    var disposal = opts.disposal === undefined ? 0 : opts.disposal;
+    var disposal = opts.disposal === undefined ? 2 : opts.disposal;
     if (disposal < 0 || disposal > 3) // 4-7 is reserved.
       throw "Disposal out of range.";
 
@@ -1741,7 +1741,8 @@ AnimatedGIF.prototype = {
         // the files are WAY smaller o_o. Patches/explanations welcome!
         var buffer = []; // new Uint8Array(width * height * frames.length * 5);
         var gifOptions = {
-            loop: this.repeat
+            loop: this.repeat,
+            disposal: 2
         };
         var options = this.options;
         var interval = options.interval;
